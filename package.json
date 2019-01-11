@@ -1,0 +1,21 @@
+{
+  "name": "reactive-snake-game",
+  "version": "1.0.0",
+  "description": "Snake game implemented in reactive and imperative paradigms.",
+  "main": "index.html",
+  "scripts": {
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@types/jquery": "^3.3.22",
+    "jquery": "^3.3.1",
+    "rxjs": "6.3.3",
+    "rxjs-extra": "^0.1.1",
+    "typescript": "^3.1.6"
+  },
+  "devDependencies": {
+    "@types/jquery": "3.3.22",
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": []
+}

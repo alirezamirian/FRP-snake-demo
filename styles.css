@@ -1,0 +1,90 @@
+.theme-dark {
+  --bg-color: #263238;
+  --fg-color: #fff;
+  --board-bg-color: #607d8b;
+  --snake-cell-color: #927c9a;
+  --board-game-over-bg-color: #d6c334;
+  --seed-color: red;
+}
+
+/* These variables are defaults, and are here to prevent IDE complains about missing variables.
+   actual values are controlled by js
+ */
+:root {
+  --cell-width: 10px;
+  --board-size: 10;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue Light", "Helvetica Neue", Helvetica,
+    Arial, "Lucida Grande", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+}
+
+section {
+  width: calc(50% - 2px);
+  display: inline-block;
+  text-align: center;
+  transform: scale(0.8);
+  transition: transform 0.2s;
+}
+
+section:focus {
+  transform: scale(1);
+  outline: none;
+}
+
+.board {
+  cursor: none;
+  position: relative;
+  width: calc(var(--cell-width) * var(--board-size));
+  height: calc(var(--cell-width) * var(--board-size));
+  margin: auto;
+  background: var(--board-bg-color);
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.board.game-over {
+  background: var(--board-game-over-bg-color);
+}
+
+.snake-cell {
+  position: absolute;
+  width: var(--cell-width);
+  height: var(--cell-width);
+  display: inline-block;
+  border-radius: 2px;
+  background: var(--snake-cell-color);
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 2;
+}
+
+.seed {
+  position: absolute;
+  width: var(--cell-width);
+  height: var(--cell-width);
+  background: url("https://www.google.com/logos/fnbx/snake_arcade/apple.png");
+  background-size: contain;
+  border-radius: 100px;
+  animation: pulse 2s infinite;
+  animation-timing-function: ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
