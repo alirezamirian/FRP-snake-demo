@@ -1,5 +1,5 @@
 import {BOARD_SIZE} from '../config';
-import {Direction, Point, SnakeCells} from '../types';
+import {Direction, GameState, Point, SnakeCells} from '../types';
 
 let isInBoundaries = function (x: any, y: any) {
   return x >= 0 && x < BOARD_SIZE && y >= 0 && y < BOARD_SIZE;
@@ -8,12 +8,6 @@ let isInBoundaries = function (x: any, y: any) {
 export function causesGameOver([x, y], snakeCells: SnakeCells) {
   return isInBoundaries(x, y) && !snakeCells.some(cell => isEqual(cell, [x, y]));
 }
-
-export interface GameState {
-  gameOver: boolean;
-  snakeCells: SnakeCells;
-  seed: Point;
-};
 
 export function move(snakeCells: SnakeCells, seed: Point, direction: Direction): GameState {
   direction = getEffectiveDirection(snakeCells, direction);

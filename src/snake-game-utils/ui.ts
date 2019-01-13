@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import {CELL_WIDTH} from '../config';
 import {Point, SnakeCells} from '../types';
-import {GameState} from './logic';
+import {GameState} from '../types';
 
 type Args = {
   seed: Point,
